@@ -41,7 +41,34 @@ function checkAuthor (){
 </script>
 
 <div class="container">
-    <img src="Goa.jpg" alter="Goa" height="100px" width="100px" onclick="selectImage()">
+    <img src="Goa.jpg" alter="Goa" height="100px" width="100px" onclick="selectImage()" value="useImage">
+<script>
+   let useImage = 1;
+    function selectImage(){
+        let imageElement =document.getElementById("image");
+        switch(useImage.getElementById()){
+            case 1: 
+            imageElement.src = "Goa.jpg";
+            useImage = 2;
+            break;
+            case 2:
+                imageElement.src ="Ooty.jpg";
+                useImage =3;
+                break;
+            case 3:
+                imageElement.src ="Pune.jpg";
+                useImage = 1;
+                break;
+
+
+        }
+    }
+
+
+
+</script>
+
+
 </div>
 
 
