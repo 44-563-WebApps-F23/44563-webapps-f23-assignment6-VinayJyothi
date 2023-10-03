@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tips by Vinay Jyothi</title>
+    </head>
+ 
+<body>
+
+<h2>Shows tip Amounts</h2>
+
+<form>
+    <label for="form1_base"> Enter base amount </label> 
+    <input type ="number" id="form1_base" name="form1_base" min=10 max=50 step=2 value=50> <br>
+
+    <label for="form1_percent"> Enter tip percent </label>
+    <input type ="number" id="form1_percent" name="form1_percent" autofocus value=15> <br>
+
+    <input type="button" onclick="tips()" value="Show tip">
+</form>
+
+
+<p id="result">Tips are shown here</p>
+
+<script> 
+
+function tips(){
+    base_amount = parseFloat(document.getElementById("form1_base").value)
+    percent_tip = parseFloat(document.getElementById("form1_percent").value)
+    let myOutput = " ";
+    let i=0;
+    while(i<5){
+        var tips = (base_amount * (percent_tip + i * 4)) / 100;
+            myOutput = myOutput + (percent_tip + i * 4) + "% is " + tips.toFixed(2) + ";    ";
+            i++;
+    }
+    document.getElementById("result").innerHTML = "Tips are:" + myOutput;
+}
+</script>
+
+</body>
+</html> 
