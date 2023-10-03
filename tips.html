@@ -37,5 +37,55 @@ function tips(){
 }
 </script>
 
+<form>
+    <label for="sum"> Sum  </label>
+      <input type="radio" name="operation" value="sum" onClick="chooseOp()">
+   
+    <label for="Diff"> Diff  </label>
+      <input type="radio" name="operation" value="difference" onClick="chooseOp()"> 
+   
+    <label for="Mult"> Mult </label>
+      <input type="radio" name="operation" value="product" onClick="chooseOp()"> 
+    
+  </form>
+ 
+  <p id="result1">tip is here</p>
+  
+  <script>
+    function chooseOp(){
+        base_amount = parseFloat(document.getElementById("form1_base").value)
+        percent_tip = parseFloat(document.getElementById("form1_percent").value)
+        operationRadios = document.getElementsByName("operation");
+        let result = document.getElementById("result1");
+
+        let selectedOperation;
+        let value;
+
+        operationRadios.forEach(radio => {
+            if (radio.checked) {
+                selectedOperation = radio.value;
+    }
+  });
+   
+  switch (selectedOperation) {
+    case "sum":
+      value = base_amount + percent_tip;
+      break;
+    case "difference":
+      value = base_amount - percent_tip;
+      break;
+    case "product":
+      value = base_amount * percent_tip;
+      break;
+  }
+
+  result1.innerHTML = `Result: ${value}`;
+}
+
+
+
+
+  </script>
+
 </body>
 </html> 
