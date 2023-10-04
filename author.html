@@ -38,6 +38,10 @@ function checkAuthor (){
     else{
         oops++;
         alert("sorry!");
+        if(oops>7){
+            alert("Sorry, ran out of guesses")
+
+        }
     }
     const result = document.getElementById("result");
     result.innerHTML = "Good count:" + good + "<br>OOps count:"+ oops;
